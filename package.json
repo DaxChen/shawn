@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "DaxChen",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.6.2",
+    "dotenv": "^2.0.0",
+    "errorhandler": "^1.4.3",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.9",
+    "morgan": "^1.7.0"
+  }
 }
