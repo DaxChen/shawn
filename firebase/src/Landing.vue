@@ -1,6 +1,7 @@
 <template>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
+  <!-- HEADER START -->
   <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
     <div class="mdl-layout__header-row">
       <span class="android-title mdl-layout-title">
@@ -19,13 +20,9 @@
       <!-- Navigation -->
       <div class="android-navigation-container">
         <nav class="android-navigation mdl-navigation">
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Phones</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Tablets</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Wear</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">TV</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Auto</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">One</a>
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Play</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">About</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Book Request</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Meet The Squad</a>
         </nav>
       </div>
       <span class="android-mobile-title mdl-layout-title">

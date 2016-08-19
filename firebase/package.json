@@ -1,7 +1,7 @@
 {
-  "name": "client",
+  "name": "Chiammo",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Save time searching for the lowest textbooks",
   "author": "DaxChen <tp6m4cj96@gmail.com>",
   "private": true,
   "scripts": {
