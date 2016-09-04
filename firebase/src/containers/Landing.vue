@@ -5,7 +5,7 @@
   <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
     <div class="mdl-layout__header-row">
       <span class="android-title mdl-layout-title">
-        <!-- <img class="android-logo-image" src="./assets/images/android-logo.png"> -->
+        <!-- <img class="android-logo-image" src="../assets/images/android-logo.png"> -->
         <h3 class="android-logo-image" style="color:#767777;font-weight:600">Chiammo</h3>
       </span>
       <!-- Add spacer, to align navigation to the right in desktop -->
@@ -21,13 +21,13 @@
       <!-- Navigation -->
       <div class="android-navigation-container">
         <nav class="android-navigation mdl-navigation">
-          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">About</a>
+          <a class="mdl-navigation__link mdl-typography--text-uppercase" v-link="{ path: '/about' }">About</a>
           <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Book Request</a>
           <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Meet The Squad</a>
         </nav>
       </div>
       <span class="android-mobile-title mdl-layout-title">
-        <!-- <img class="android-logo-image" src="./assets/images/android-logo.png"> -->
+        <!-- <img class="android-logo-image" src="../assets/images/android-logo.png"> -->
         <h3 class="android-logo-image" style="color:#767777;font-weight:600;margin:0">Chiammo</h3>
       </span>
       <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
@@ -44,7 +44,7 @@
 
   <div class="android-drawer mdl-layout__drawer">
     <span class="mdl-layout-title">
-      <!-- <img class="android-logo-image" src="./assets/images/android-logo-white.png"> -->
+      <!-- <img class="android-logo-image" src="../assets/images/android-logo-white.png"> -->
       <h3 class="android-logo-image" style="color:#fff;font-weight:600">Chiammo</h3>
     </span>
     <nav class="mdl-navigation">
@@ -95,32 +95,32 @@
       <div class="android-screens">
         <div class="android-wear android-screen">
           <a class="android-image-link" href="">
-            <img class="android-screen-image" src="./assets/images/wear-silver-on.png">
-            <img class="android-screen-image" src="./assets/images/wear-black-on.png">
+            <img class="android-screen-image" src="../assets/images/wear-silver-on.png">
+            <img class="android-screen-image" src="../assets/images/wear-black-on.png">
           </a>
           <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android Wear</a>
         </div>
         <div class="android-phone android-screen">
           <a class="android-image-link" href="">
-            <img class="android-screen-image" src="./assets/images/nexus6-on.jpg">
+            <img class="android-screen-image" src="../assets/images/nexus6-on.jpg">
           </a>
           <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Phones</a>
         </div>
         <div class="android-tablet android-screen">
           <a class="android-image-link" href="">
-            <img class="android-screen-image" src="./assets/images/nexus9-on.jpg">
+            <img class="android-screen-image" src="../assets/images/nexus9-on.jpg">
           </a>
           <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Tablets</a>
         </div>
         <div class="android-tv android-screen">
           <a class="android-image-link" href="">
-            <img class="android-screen-image" src="./assets/images/tv-on.jpg">
+            <img class="android-screen-image" src="../assets/images/tv-on.jpg">
           </a>
           <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Android TV</a>
         </div>
         <div class="android-auto android-screen">
           <a class="android-image-link" href="">
-            <img class="android-screen-image" src="./assets/images/auto-on.jpg">
+            <img class="android-screen-image" src="../assets/images/auto-on.jpg">
           </a>
           <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase mdl-typography--text-left" href="">Coming Soon: Android Auto</a>
         </div>
@@ -158,7 +158,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
           <div class="mdl-card__media">
-            <img src="./assets/images/more-from-1.png">
+            <img src="../assets/images/more-from-1.png">
           </div>
           <div class="mdl-card__title">
              <h4 class="mdl-card__title-text">Step 1: Request</h4>
@@ -176,7 +176,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
           <div class="mdl-card__media">
-            <img src="./assets/images/more-from-4.png">
+            <img src="../assets/images/more-from-4.png">
           </div>
           <div class="mdl-card__title">
              <h4 class="mdl-card__title-text">Step 2: Receive</h4>
@@ -194,7 +194,7 @@
 
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
           <div class="mdl-card__media">
-            <img src="./assets/images/more-from-2.png">
+            <img src="../assets/images/more-from-2.png">
           </div>
           <div class="mdl-card__title">
              <h4 class="mdl-card__title-text">Step 3: Accept & Purchase</h4>
@@ -444,7 +444,7 @@ a img{
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('./assets/images/slide01.jpg') center 30% no-repeat;
+  background: url('../assets/images/slide01.jpg') center 30% no-repeat;
   background-size: cover;
 }
 
@@ -571,7 +571,7 @@ a img{
 
 .android-wear-section {
   position: relative;
-  background: url('./assets/images/desktop5.jpg') center top no-repeat;
+  background: url('../assets/images/desktop5.jpg') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -642,7 +642,7 @@ a img{
   }
 
 .android-customized-section-image {
-  background: url('./assets/images/devices.jpg') center top no-repeat;
+  background: url('../assets/images/devices.jpg') center top no-repeat;
   background-size: cover;
   height: 400px;
 }
