@@ -5,7 +5,8 @@
   <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
     <div class="mdl-layout__header-row">
       <span class="android-title mdl-layout-title">
-        <img class="android-logo-image" src="./assets/images/android-logo.png">
+        <!-- <img class="android-logo-image" src="./assets/images/android-logo.png"> -->
+        <h3 class="android-logo-image" style="color:#767777;font-weight:600">Chiammo</h3>
       </span>
       <!-- Add spacer, to align navigation to the right in desktop -->
       <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -26,7 +27,8 @@
         </nav>
       </div>
       <span class="android-mobile-title mdl-layout-title">
-        <img class="android-logo-image" src="./assets/images/android-logo.png">
+        <!-- <img class="android-logo-image" src="./assets/images/android-logo.png"> -->
+        <h3 class="android-logo-image" style="color:#767777;font-weight:600;margin:0">Chiammo</h3>
       </span>
       <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
         <i class="material-icons">more_vert</i>
@@ -42,7 +44,8 @@
 
   <div class="android-drawer mdl-layout__drawer">
     <span class="mdl-layout-title">
-      <img class="android-logo-image" src="./assets/images/android-logo-white.png">
+      <!-- <img class="android-logo-image" src="./assets/images/android-logo-white.png"> -->
+      <h3 class="android-logo-image" style="color:#fff;font-weight:600">Chiammo</h3>
     </span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="">Phones</a>
@@ -74,19 +77,19 @@
   <div class="android-content mdl-layout__content">
     <a name="top"></a>
     <div class="android-be-together-section mdl-typography--text-center">
-      <div class="logo-font android-slogan">be together. not the same.</div>
-      <div class="logo-font android-sub-slogan">welcome to android... be yourself. do your thing. see what's going on.</div>
+      <div class="logo-font android-slogan">SAVE TIME, GET MORE</div>
+      <div class="logo-font android-sub-slogan">We help you find the lowest textbooks!</div>
       <div class="logo-font android-create-character">
-        <a href=""><img src="./assets/images/andy.png"> create your android character</a>
+        <a href="">Click here to begin</a>
       </div>
 
-      <a href="#screens">
+      <!-- <a href="#screens">
         <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
           <i class="material-icons">expand_more</i>
         </button>
-      </a>
+      </a> -->
     </div>
-    <div class="android-screen-section mdl-typography--text-center">
+    <!-- <div class="android-screen-section mdl-typography--text-center">
       <a name="screens"></a>
       <div class="mdl-typography--display-1-color-contrast">Powering screens of all sizes</div>
       <div class="android-screens">
@@ -122,24 +125,23 @@
           <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase mdl-typography--text-left" href="">Coming Soon: Android Auto</a>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="android-wear-section">
       <div class="android-wear-band">
         <div class="android-wear-band-text">
-          <div class="mdl-typography--display-2 mdl-typography--font-thin">The best of Google built in</div>
+          <div class="mdl-typography--display-2 mdl-typography--font-thin">Find the best price</div>
           <p class="mdl-typography--headline mdl-typography--font-thin">
-            Android works perfectly with your favourite apps like Google Maps,
-            Calendar and YouTube.
+            Just tell us the books you want, and we'll find the best price on the internet for you.
           </p>
           <p>
             <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
-              See what's new in the Play Store&nbsp;<i class="material-icons">chevron_right</i>
+              See the book request list&nbsp;<i class="material-icons">chevron_right</i>
             </a>
           </p>
         </div>
       </div>
     </div>
-    <div class="android-customized-section">
+    <!-- <div class="android-customized-section">
       <div class="android-customized-section-text">
         <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Customised by you, for you</div>
         <p class="mdl-typography--font-light">
@@ -149,80 +151,63 @@
         </p>
       </div>
       <div class="android-customized-section-image"></div>
-    </div>
+    </div> -->
     <div class="android-more-section">
-      <div class="android-section-title mdl-typography--display-1-color-contrast">More from Android</div>
+      <div class="android-section-title mdl-typography--display-1-color-contrast">How it works</div>
       <div class="android-card-container mdl-grid">
-        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
           <div class="mdl-card__media">
             <img src="./assets/images/more-from-1.png">
           </div>
           <div class="mdl-card__title">
-             <h4 class="mdl-card__title-text">Get going on Android</h4>
+             <h4 class="mdl-card__title-text">Step 1: Request</h4>
           </div>
           <div class="mdl-card__supporting-text">
-            <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
+            <span class="mdl-typography--font-light mdl-typography--subhead">Click on 'Book Request' and enter the information required</span>
           </div>
           <div class="mdl-card__actions">
              <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-               Make the switch
+               Request Now
                <i class="material-icons">chevron_right</i>
              </a>
           </div>
         </div>
 
-        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
           <div class="mdl-card__media">
             <img src="./assets/images/more-from-4.png">
           </div>
           <div class="mdl-card__title">
-             <h4 class="mdl-card__title-text">Create your own Android character</h4>
+             <h4 class="mdl-card__title-text">Step 2: Receive</h4>
           </div>
           <div class="mdl-card__supporting-text">
-            <span class="mdl-typography--font-light mdl-typography--subhead">Turn the little green Android mascot into you, your friends, anyone!</span>
+            <span class="mdl-typography--font-light mdl-typography--subhead">Receive your results for the best prices found</span>
           </div>
-          <div class="mdl-card__actions">
+          <!-- <div class="mdl-card__actions">
              <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
                androidify.com
                <i class="material-icons">chevron_right</i>
              </a>
-          </div>
+          </div> -->
         </div>
 
-        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
           <div class="mdl-card__media">
             <img src="./assets/images/more-from-2.png">
           </div>
           <div class="mdl-card__title">
-             <h4 class="mdl-card__title-text">Get a clean customisable home screen</h4>
+             <h4 class="mdl-card__title-text">Step 3: Accept & Purchase</h4>
           </div>
           <div class="mdl-card__supporting-text">
-            <span class="mdl-typography--font-light mdl-typography--subhead">A clean, simple, customisable home screen that comes with the power of Google Now: Traffic alerts, weather and much more, just a swipe away.</span>
+            <span class="mdl-typography--font-light mdl-typography--subhead">Accept the quotes and purchase your books</span>
           </div>
-          <div class="mdl-card__actions">
+          <!-- <div class="mdl-card__actions">
              <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
                Download now
                <i class="material-icons">chevron_right</i>
              </a>
-          </div>
-        </div>
-
-        <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-          <div class="mdl-card__media">
-            <img src="./assets/images/more-from-3.png">
-          </div>
-          <div class="mdl-card__title">
-             <h4 class="mdl-card__title-text">Millions to choose from</h4>
-          </div>
-          <div class="mdl-card__supporting-text">
-            <span class="mdl-typography--font-light mdl-typography--subhead">Hail a taxi, find a recipe, run through a temple – Google Play has all the apps and games that let you make your Android device uniquely yours.</span>
-          </div>
-          <div class="mdl-card__actions">
-             <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-               Find apps
-               <i class="material-icons">chevron_right</i>
-             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -245,8 +230,7 @@
       </div>
 
       <div class="mdl-mega-footer--middle-section">
-        <p class="mdl-typography--font-light">Satellite imagery: © 2014 Astrium, DigitalGlobe</p>
-        <p class="mdl-typography--font-light">Some features and devices may not be available in all areas</p>
+        <p class="mdl-typography--font-light"> © Copyright 2016 Chiammo, All Rights Reserved.</p>
       </div>
 
       <div class="mdl-mega-footer--bottom-section">
@@ -587,7 +571,7 @@ a img{
 
 .android-wear-section {
   position: relative;
-  background: url('./assets/images/wear.png') center top no-repeat;
+  background: url('./assets/images/desktop5.jpg') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -752,7 +736,7 @@ a img{
 /**** Mobile layout ****/
 @media (max-width: 900px) {
   .android-navigation-container {
-    display: none;
+ kk   display: none;
   }
 
   .android-title {
@@ -778,7 +762,7 @@ a img{
   .android-more-button {
     display: none;
   }
-
+z
   .android-search-box.is-focused {
     width: calc(100% - 48px);
   }
