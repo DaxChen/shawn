@@ -5,11 +5,13 @@ import Landing from './containers/Landing'
 import About from './containers/About'
 import MeetTheSquad from './containers/MeetTheSquad'
 import Request from './containers/Request'
+import VueMdl from 'vue-mdl'
 
 // import the main.css
 import './main.css'
 
 Vue.use(VueRouter)
+Vue.use(VueMdl)
 
 const router = new VueRouter({
   history: true,
