@@ -1,19 +1,37 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
-import About from './containers/About'
 import Landing from './containers/Landing'
+import About from './containers/About'
+import MeetTheSquad from './containers/MeetTheSquad'
+import Request from './containers/Request'
+
+// import the main.css
+import './main.css'
 
 Vue.use(VueRouter)
 
-const router = new VueRouter()
+const router = new VueRouter({
+  history: true,
+  saveScrollPosition: true
+})
 
 router.map({
   '/': {
+    name: 'landing',
     component: Landing
   },
   '/about': {
+    name: 'about',
     component: About
+  },
+  '/request': {
+    name: 'request',
+    component: Request
+  },
+  '/meet-the-squad': {
+    name: 'meet-the-squad',
+    component: MeetTheSquad
   }
 })
 
