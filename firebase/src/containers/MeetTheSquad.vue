@@ -12,7 +12,7 @@
             <p>“I am CHIAMMO, and if you love the Lion King we are already friends :)”</p>
         </div>
         <!-- <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="meetthesquad-example01.html">Read more</a>
+            <a v-mdl class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="meetthesquad-example01.html">Read more</a>
         </div> -->
     </div>
     <div class="mdl-cell mdl-card mdl-shadow--4dp meetthesquad-card">
