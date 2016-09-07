@@ -1,4 +1,5 @@
 <template>
+<!-- this mdl-layout thing is not supported by vue-mdl yet... be careful@@ -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- HEADER START -->
@@ -10,14 +11,12 @@
       </span>
       <!-- Add spacer, to align navigation to the right in desktop -->
       <div class="android-header-spacer mdl-layout-spacer"></div>
-      <!-- <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-        <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
-          <i class="material-icons">search</i>
-        </label>
-        <div class="mdl-textfield__expandable-holder">
-          <input class="mdl-textfield__input" type="text" id="search-field">
-        </div>
-      </div> -->
+      <!-- <mdl-textfield
+        id="search-field"
+        class="android-search-box"
+        expandable="search"
+      >
+      </mdl-textfield> -->
       <!-- Navigation -->
       <div class="android-navigation-container">
         <nav class="android-navigation mdl-navigation">
@@ -30,15 +29,19 @@
         <!-- <img class="android-logo-image" src="../assets/images/android-logo.png"> -->
         <a class="android-link" v-link="{ path: '/' }"><h3 class="android-logo-image" style="color:#767777;font-weight:600;margin:0">Chiammo</h3></a>
       </span>
-      <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+      <mdl-button
+        icon="true"
+        class="android-more-button mdl-js-ripple-effect"
+        id="more-button"
+      >
         <i class="material-icons">more_vert</i>
-      </button>
-      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-        <li class="mdl-menu__item">5.0 Lollipop</li>
-        <li class="mdl-menu__item">4.4 KitKat</li>
-        <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
-        <li class="mdl-menu__item">Android History</li>
-      </ul>
+      </mdl-button>
+      <mdl-menu class="mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+        <mdl-menu-item>Don't Know</mdl-menu-item>
+        <mdl-menu-item>What</mdl-menu-item>
+        <mdl-menu-item disabled>To Put</mdl-menu-item>
+        <mdl-menu-item>Here</mdl-menu-item>
+      </mdl-menu>
     </div>
   </div>
 
@@ -98,27 +101,27 @@
 
       <div class="mdl-mega-footer--bottom-section">
         <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
-          Versions
+          I'm a menu
           <i class="material-icons">arrow_drop_up</i>
         </a>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
-          <li class="mdl-menu__item">5.0 Lollipop</li>
-          <li class="mdl-menu__item">4.4 KitKat</li>
-          <li class="mdl-menu__item">4.3 Jelly Bean</li>
-          <li class="mdl-menu__item">Android History</li>
-        </ul>
+        <mdl-menu class="mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
+          <mdl-menu-item>bla</mdl-menu-item>
+          <mdl-menu-item>blaaa</mdl-menu-item>
+          <mdl-menu-item>blabla</mdl-menu-item>
+          <mdl-menu-item>blaaablaaa</mdl-menu-item>
+        </mdl-menu>
         <a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
           For Developers
           <i class="material-icons">arrow_drop_up</i>
         </a>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
-          <li class="mdl-menu__item">App developer resources</li>
-          <li class="mdl-menu__item">Android Open Source Project</li>
-          <li class="mdl-menu__item">Android SDK</li>
-          <li class="mdl-menu__item">Android for Work</li>
-        </ul>
-        <a class="android-link mdl-typography--font-light" href="">Blog</a>
-        <a class="android-link mdl-typography--font-light" href="">Privacy Policy</a>
+        <mdl-menu class="mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
+          <mdl-menu-item>apple</mdl-menu-item>
+          <mdl-menu-item>banana</mdl-menu-item>
+          <mdl-menu-item>cat</mdl-menu-item>
+          <mdl-menu-item>dog</mdl-menu-item>
+        </mdl-menu>
+        <a class="android-link mdl-typography--font-light">Blog</a>
+        <a class="android-link mdl-typography--font-light">Privacy Policy</a>
       </div>
     </footer>
   </div>
@@ -347,7 +350,7 @@ export default {
   .android-more-button {
     display: none;
   }
-z
+
   .android-search-box.is-focused {
     width: calc(100% - 48px);
   }

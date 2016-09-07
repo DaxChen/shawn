@@ -1,5 +1,5 @@
 <template>
-<div class="mdl-grid request-max-width chiammo-request">
+<div class="mdl-grid chiammo-max-width chiammo-request">
     <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text">Request a book</h2>
@@ -11,27 +11,36 @@
             <p>
                 To request a book, fill out the form below and we'll try our best to find the best deal for you.
             </p>
-            <form class="" @submit.prevent="submitForm">
+            <form @submit.prevent="submitForm">
                 <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">A little about you...</h3>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input v-model="name" class="mdl-textfield__input" pattern="^(?!\s*$).+" type="text" id="Name">
-                    <label class="mdl-textfield__label" for="Name">Name (required)</label>
-                    <span class="mdl-textfield__error">Required</span>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input v-model="email" class="mdl-textfield__input" pattern="\S+@\S+\.\S+" type="email" id="Email">
-                    <label class="mdl-textfield__label" for="Email">Email (required)</label>
-                    <span class="mdl-textfield__error">Invalid Email</span>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input v-model="schoolname" class="mdl-textfield__input" pattern="^(?!\s*$).+" type="text" id="schoolname">
-                    <label class="mdl-textfield__label" for="schoolname">School Name (required)</label>
-                    <span class="mdl-textfield__error">Required</span>
-                </div>
+                <mdl-textfield
+                  type="text"
+                  :value.sync="name"
+                  floating-label="Name (required)"
+                  pattern="^(?!\s*$).+"
+                  error="Required"
+                >
+                </mdl-textfield>
+                <mdl-textfield
+                  type="email"
+                  :value.sync="email"
+                  floating-label="Email (required)"
+                  pattern="\S+@\S+\.\S+"
+                  error="Invalid Email"
+                >
+                </mdl-textfield>
+                <mdl-textfield
+                  type="text"
+                  :value.sync="schoolname"
+                  floating-label="School Name (required)"
+                  pattern="^(?!\s*$).+"
+                  error="Required"
+                >
+                </mdl-textfield>
 
                 <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Books:</h3>
                 <table
-                  v-show="books.length"
+                  v-mdl
                   class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--2dp"
                 >
                   <thead>
@@ -45,57 +54,108 @@
                   </thead>
                   <tbody>
                     <tr v-for="book in books">
-                      <td class="mdl-data-table__cell--non-numeric">{{ book.title }}</td>
-                      <td class="mdl-data-table__cell--non-numeric">{{ book.author }}</td>
-                      <td class="mdl-data-table__cell--non-numeric">{{ book.isbn }}</td>
-                      <td class="mdl-data-table__cell--non-numeric">{{ book.note }}</td>
+                      <td class="mdl-data-table__cell--non-numeric force-wrap">{{ book.title }}</td>
+                      <td class="mdl-data-table__cell--non-numeric force-wrap">{{ book.author }}</td>
+                      <td class="mdl-data-table__cell--non-numeric force-wrap">{{ book.isbn }}</td>
+                      <td class="mdl-data-table__cell--non-numeric force-wrap">{{ book.note }}</td>
                       <td>
-                        <button
-                          class="mdl-button mdl-js-button mdl-button--icon"
-                          title="delete"
+                        <mdl-button
                           @click.prevent="deleteBook($index)"
+                          icon="true"
                         >
                           <i class="material-icons">close</i>
-                        </button>
+                        </mdl-button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="5" class="mdl-data-table__cell--non-numeric">
+                        <mdl-button
+                          raised
+                          colored
+                          style="width: 100%"
+                          class="mdl-js-ripple-effect"
+                          @click.prevent="openAddBookDialog"
+                        >
+                          Click to add a new book
+                        </mdl-button>
                       </td>
                     </tr>
                   </tbody>
                 </table>
 
-                <div v-el:title class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input v-model="currentBook.title" class="mdl-textfield__input" pattern="^(?!\s*$).+" type="text" id="Title">
-                    <label class="mdl-textfield__label" for="Title">Title (required)</label>
-                    <span class="mdl-textfield__error">Required</span>
-                </div>
-                <div v-el:author class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input v-model="currentBook.author" class="mdl-textfield__input" pattern="^(?!\s*$).+" type="text" id="Author">
-                    <label class="mdl-textfield__label" for="Author">Author (optional, but recommended)</label>
-                </div>
-                <div v-el:isbn class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input v-model="currentBook.isbn" class="mdl-textfield__input" type="text" id="ISBN">
-                    <label class="mdl-textfield__label" for="ISBN">ISBN (optional)</label>
-                </div>
-                <div v-el:note class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <textarea v-model="currentBook.note" class="mdl-textfield__input" type="text" rows="3" id="Note"></textarea>
-                    <label class="mdl-textfield__label" for="Note">Notes (optional)</label>
-                </div>
-
-                <button
-                  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                  @click.prevent="addBook"
+                <mdl-dialog
+                  v-ref:add-book-dialog
+                  v-transfer-dom
+                  transition="modal"
+                  title="Add a book!"
+                  class="modal-fade"
                 >
-                    Add
-                </button>
+                  <div class="mdl-grid">
+                    <mdl-textfield
+                      type="text"
+                      floating-label="Title (required)"
+                      :value.sync="currentBook.title"
+                      pattern="^(?!\s*$).+"
+                      error="Required"
+                      class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop"
+                    >
+                    </mdl-textfield>
+                    <mdl-textfield
+                      type="text"
+                      floating-label="Author (optional, but recommended)"
+                      :value.sync="currentBook.author"
+                      pattern="^(?!\s*$).+"
+                      error="Required"
+                      class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop"
+                    >
+                    </mdl-textfield>
+                    <mdl-textfield
+                      type="text"
+                      floating-label="ISBN (optional)"
+                      :value.sync="currentBook.isbn"
+                      class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop"
+                    >
+                    </mdl-textfield>
+                    <mdl-textfield
+                      type="text"
+                      floating-label="Notes (optional)"
+                      :value.sync="currentBook.note"
+                      textarea
+                      rows="3"
+                      class="mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop"
+                    >
+                    </mdl-textfield>
+                  </div>
+
+                  <div slot="actions">
+                    <mdl-button
+                      raised
+                      primary
+                      class="mdl-js-ripple-effect"
+                      @click.prevent="addBook"
+                      :disabled="!validBookInfo"
+                    >
+                        Add
+                    </mdl-button>
+                    <mdl-button
+                      class="mdl-js-ripple-effect"
+                      @click.prevent="$refs.addBookDialog.close"
+                    >
+                        Close
+                    </mdl-button>
+                  </div>
+                </mdl-dialog>
+
                 <p>
                     <button
                       v-show="books.length"
+                      :disabled="!validForm"
                       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
                       type="submit"
                     >
                         Submit {{ this.books.length.toString() }} {{ this.books.length === 1 ? 'book' : 'books' }}
                     </button>
                 </p>
-                <pre>{{ $data | json }}</pre>
             </form>
             <p>
                 **We are in the works, bear with us while we find you the best price.
@@ -108,6 +168,7 @@
 </div>
 </template>
 <script>
+import isEmail from 'validator/lib/isEmail'
 export default {
   data () {
     return {
@@ -123,17 +184,30 @@ export default {
       }
     }
   },
+  computed: {
+    validBookInfo() {
+      return this.currentBook.title.trim() !== ''
+    },
+    validForm() {
+      return (
+        this.name.trim() !== '' &&
+        isEmail(this.email.trim()) &&
+        this.schoolname.trim() !== '' &&
+        this.books.length > 0
+      )
+    }
+  },
   methods: {
     deleteBook (idx) {
       this.books.splice(idx, 1)
     },
+    openAddBookDialog() {
+      this.$refs.addBookDialog.open()
+    },
     addBook () {
       this.books.push(this.currentBook)
       this.currentBook = { title: '', author: '', isbn: '', note: '' }
-      this.$els.title.MaterialTextfield.change('')
-      this.$els.author.MaterialTextfield.change('')
-      this.$els.isbn.MaterialTextfield.change('')
-      this.$els.note.MaterialTextfield.change('')
+      this.$refs.addBookDialog.close()
     },
     submitForm () {
       console.log(this.books)
@@ -147,13 +221,9 @@ img.article-image {
   height: auto;
 }
 
-.request-max-width {
+.chiammo-max-width {
   max-width: 900px;
   margin: auto;
-}
-
-.about-copy {
-  max-width: 700px;
 }
 
 .chiammo-request .mdl-textfield {
@@ -164,5 +234,36 @@ img.article-image {
   max-width: 550px;
   margin: auto;
 }
+
+.force-wrap {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.modal-fade {
+  transition: all .3s ease;
+}
+
+/**
+ * http://jsfiddle.net/rhyzx/br5cepu3/
+ * the following styles are auto-applied to elements with
+ * transition="modal" when their visiblity is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter,
+.modal-leave {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 
 </style>
