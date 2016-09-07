@@ -8,7 +8,11 @@
     </div>
 
     <!-- <a href="#screens">
-      <button class="android-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+      <button
+        class="android-fab mdl-js-ripple-effect"
+        colored
+        fab
+      >
         <i class="material-icons">expand_more</i>
       </button>
     </a> -->
@@ -34,7 +38,7 @@
   <!-- How it works -->
   <div class="android-more-section">
     <div class="android-section-title mdl-typography--display-1-color-contrast">How it works</div>
-    <div class="android-card-container mdl-grid">
+    <div class="android-card-container mdl-grid"><!-- too lazy to change this to WIP mdl-card -->
 
       <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
         <div class="mdl-card__media">
@@ -47,7 +51,7 @@
           <span class="mdl-typography--font-light mdl-typography--subhead">Click on 'Book Request' and enter the information required</span>
         </div>
         <div class="mdl-card__actions">
-           <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" v-link="{ name: 'request' }">
+           <a v-mdl class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" v-link="{ name: 'request' }">
              Request Now
              <i class="material-icons">chevron_right</i>
            </a>
