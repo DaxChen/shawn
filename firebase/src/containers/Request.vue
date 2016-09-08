@@ -149,12 +149,19 @@
                 <p>
                     <button
                       v-show="books.length"
-                      :disabled="!validForm"
+                      :disabled="!validForm || transferFormState == 1"
                       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
                       type="submit"
                     >
-                        Submit {{ this.books.length.toString() }} {{ this.books.length === 1 ? 'book' : 'books' }}
+                        {{ this.transferFormState === 0
+                          ?  `Submit ${this.books.length.toString()} ${this.books.length === 1 ? 'book' : 'books'}`
+                          : this.transferFormState === 1 ? 'wait...' : 'done!'
+                        }}
                     </button>
+                    <span>
+                      <i v-if="transferFormState == 2" class="material-icons" style="color:green;vertical-align:middle">done</i>
+                      Success! Thanks for your request!
+                    </span>
                 </p>
             </form>
             <p>
@@ -169,6 +176,7 @@
 </template>
 <script>
 import isEmail from 'validator/lib/isEmail'
+import database from 'firebase/database'
 export default {
   data () {
     return {
@@ -181,7 +189,8 @@ export default {
         author: '',
         isbn: '',
         note: ''
-      }
+      },
+      transferFormState: 0, // 0: initial, 1: transferring, 2: don, -1: err
     }
   },
   computed: {
@@ -205,12 +214,35 @@ export default {
       this.$refs.addBookDialog.open()
     },
     addBook () {
-      this.books.push(this.currentBook)
+      this.books.push({
+        title: this.currentBook.title.trim(),
+        author: this.currentBook.author.trim(),
+        isbn: this.currentBook.isbn.trim(),
+        note: this.currentBook.note.trim()
+      })
       this.currentBook = { title: '', author: '', isbn: '', note: '' }
       this.$refs.addBookDialog.close()
     },
     submitForm () {
-      console.log(this.books)
+      const email = this.email.trim()
+      const name = this.name.trim()
+      const schoolname = this.schoolname.trim()
+
+      this.transferFormState = 1
+      database().ref('requests/').push({
+        name,
+        email,
+        schoolname,
+        books: this.books
+      })
+        .then(() => {
+          this.books = []
+          this.name = ''
+          this.email = ''
+          this.schoolname = ''
+          this.transferFormState = 2
+        })
+        .catch(err => { console.log(err); this.transferFormState = -1 })
     }
   }
 }
