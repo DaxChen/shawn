@@ -158,8 +158,8 @@
                           : this.transferFormState === 1 ? 'wait...' : 'done!'
                         }}
                     </button>
-                    <span>
-                      <i v-if="transferFormState == 2" class="material-icons" style="color:green;vertical-align:middle">done</i>
+                    <span v-if="transferFormState == 2">
+                      <i class="material-icons" style="color:green;vertical-align:middle">done</i>
                       Success! Thanks for your request!
                     </span>
                 </p>
